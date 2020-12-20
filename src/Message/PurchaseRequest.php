@@ -18,7 +18,7 @@ class PurchaseRequest extends AbstractRequest {
         'purchase'   => 'https://www.paytr.com/odeme/api/get-token'
     );
  
-    protected $currencies = [
+    protected $currenciesCode = [
         'TRY' => 'YT',
         'USD' => 'US',
         'EUR' => 'EU'
@@ -33,7 +33,7 @@ class PurchaseRequest extends AbstractRequest {
 
         $data['amount']       = $this->getAmountInteger();
         $data['orderID']      = $this->getOrderId();
-        $data['currencyCode'] = $this->currencies[$currency];
+        $data['currencyCode'] = $this->currenciesCode[$currency];
         $data['installment']  = $this->getInstallment();
  
         return $data;
